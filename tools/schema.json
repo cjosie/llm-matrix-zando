@@ -55,9 +55,9 @@
   ],
   "hardware_vendors": ["NVIDIA", "AMD", "Apple", "Intel", "Mixed"],
   "backends": [
-    "vLLM", "llama.cpp", "llama-swap", "Ollama", "LM Studio",
-    "Unsloth Desktop", "Strata", "Radiance", "Colibri",
-    "TensorRT-LLM", "MLX", "Basalt", "Other"
+    "Basalt", "Colibri", "llama.cpp", "llama-swap", "LM Studio",
+    "MLX", "Ollama", "Radiance", "Strata",
+    "TensorRT-LLM", "Unsloth Desktop", "vLLM", "Other"
   ],
   "os_drivers": [
     "Linux/CUDA", "Linux/ROCm", "Linux/Vulkan",

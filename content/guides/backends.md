@@ -20,17 +20,17 @@ extra_scripts: js/commands.js
   <div class="cmd-picker-row">
     <label for="cmd-picker-select">Backend</label>
     <select id="cmd-picker-select" class="cmd-picker-select">
+      <option value="Colibri">Colibri</option>
       <option value="llama.cpp">llama.cpp</option>
       <option value="llama-swap">llama-swap</option>
-      <option value="Ollama">Ollama</option>
       <option value="LM Studio">LM Studio</option>
-      <option value="vLLM">vLLM</option>
-      <option value="Strata">Strata</option>
-      <option value="Radiance">Radiance</option>
       <option value="MLX">MLX</option>
+      <option value="Ollama">Ollama</option>
+      <option value="Radiance">Radiance</option>
+      <option value="Strata">Strata</option>
       <option value="TensorRT-LLM">TensorRT-LLM</option>
-      <option value="Colibri">Colibri</option>
       <option value="Unsloth Desktop">Unsloth Desktop</option>
+      <option value="vLLM">vLLM</option>
     </select>
     <button class="btn btn-primary" data-cmd-generate type="button">Generate example</button>
   </div>

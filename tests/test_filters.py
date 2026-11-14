@@ -145,6 +145,14 @@ class TestShareableFilters(unittest.TestCase):
         self.assertEqual(sorted(values), expected,
                          "backend multi-select must offer the dataset's backends")
 
+    def test_backend_order_helper_is_human_alphabetical_with_other_last(self):
+        schema = {"backends": ["Basalt", "llama.cpp", "llama-swap",
+                               "Ollama", "Other"]}
+        names = {"Ollama", "Other", "llama-swap", "Unlisted", "Basalt"}
+        self.assertEqual(self._utils.sort_backend_names(names, schema),
+                         ["Basalt", "llama-swap", "Ollama", "Unlisted",
+                          "Other"])
+
     # --- Row data attributes (normalized at gen time) ----------------------
     def test_every_row_carries_use_case_and_mode_attrs(self):
         text = self._page("matrix.html")

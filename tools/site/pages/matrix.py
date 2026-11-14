@@ -228,7 +228,7 @@ def render(subs: list[dict], schema: dict, stats: dict,
       <option value="">All Vendors</option>
       {vendor_opts}
     </select>
-{multiselect("backend", "All Backends", sorted(backend_set))}
+{multiselect("backend", "All Backends", utils.sort_backend_names(backend_set, schema))}
 {multiselect("use-case", "All Use Cases", [c for c in schema.get("use_cases", []) if c != "Other"])}
     <select class="filter-select" data-filter="mode" aria-label="Filter by engine mode">
       <option value="">All Engine Modes</option>

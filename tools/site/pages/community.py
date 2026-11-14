@@ -87,7 +87,7 @@ def render(subs: list[dict], schema: dict, stats: dict,
         for v in sorted(vendor_set))
     backend_opts = "".join(
         f'<option value="{utils.html_escape(b)}">{utils.html_escape(b)}</option>'
-        for b in sorted(backend_set))
+        for b in utils.sort_backend_names(backend_set, schema))
     use_case_opts = "".join(
         f'<option value="{utils.html_escape(c)}">{utils.html_escape(c)}</option>'
         for c in schema.get("use_cases", []) if c != "Other")

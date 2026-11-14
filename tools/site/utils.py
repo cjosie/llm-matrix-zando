@@ -13,6 +13,7 @@ from __future__ import annotations
 import html as html_module
 import json
 import re
+from collections.abc import Iterable
 from pathlib import Path
 from typing import Any
 
@@ -480,6 +481,15 @@ def _match_backend(s: str, schema: dict) -> tuple[str, str] | None:
         if idx != -1:
             return sb, s[idx:idx + len(sb)]
     return None
+
+
+def sort_backend_names(names: Iterable[str], schema: dict) -> list[str]:
+    """Backend picker order: schema vocabulary order, unlisted names after the
+    known ones (alphabetically), ``Other`` last."""
+    vocab = schema.get("backends", [])
+    idx = {b: i for i, b in enumerate(vocab)}
+    return sorted(names, key=lambda n: (
+        n == "Other", idx.get(n, len(idx)), str(n).casefold()))
 
 
 def normalize_backend(raw: Any, schema: dict) -> str:
